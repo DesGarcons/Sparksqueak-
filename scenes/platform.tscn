@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwemjer2ol1m3"]
+
+[ext_resource type="Script" path="res://scripts/platform_wires.gd" id="1_eij5n"]
+[ext_resource type="PackedScene" uid="uid://covh6sgdlnjpp" path="res://assets/models/platform_wires/platform.gltf" id="1_r1taf"]
+[ext_resource type="PackedScene" uid="uid://yo3cah3o5apq" path="res://scenes/wire.tscn" id="3_y1stv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4sg3"]
+size = Vector3(1.00092, 0.246307, 1.99792)
+
+[node name="block" type="StaticBody3D"]
+script = ExtResource("1_eij5n")
+
+[node name="platform" parent="." instance=ExtResource("1_r1taf")]
+
+[node name="wire" parent="." instance=ExtResource("3_y1stv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.412, 0.096, 0)
+
+[node name="wire2" parent="." instance=ExtResource("3_y1stv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.207, 0.096, 0)
+
+[node name="wire3" parent="." instance=ExtResource("3_y1stv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007, 0.096, 0)
+
+[node name="wire4" parent="." instance=ExtResource("3_y1stv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.193, 0.096, 0)
+
+[node name="wire5" parent="." instance=ExtResource("3_y1stv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.393, 0.096, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000457764, 0.0699921, 0.000549316)
+shape = SubResource("BoxShape3D_g4sg3")
