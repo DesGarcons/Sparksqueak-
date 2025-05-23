@@ -5,13 +5,18 @@ const JUMP_VELOCITY = 4.5
 const acceleration = 25.0
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
+var use_ui := false
 
 @export var camera: Camera3D
 @export var anim: AnimationPlayer
 
+func _ready():
+	G.set_player(self)
 
 func _physics_process(delta):
+	if use_ui:
+		return
+
 	# Гравитация
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -57,7 +62,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func animation_player_play(direction: Vector3):
-	$Label.text = str(anim.speed_scale)
+	# $Label.text = str(anim.speed_scale)
 	if direction.length() > 0.1:
 		anim.speed_scale = 0.7
 		anim.play("walk")

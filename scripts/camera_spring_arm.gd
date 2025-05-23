@@ -11,6 +11,8 @@ func _ready():
 
 
 func _unhandled_input(event: InputEvent) -> void:
+    if G.player.use_ui:
+        return
     if event is InputEventMouseMotion:
         rotation.y -= event.relative.x * MOUSE_SENSITIVITY
         rotation.y = wrapf(rotation.y, 0.0, TAU)

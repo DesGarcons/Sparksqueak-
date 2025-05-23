@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dr32fk56mdebl" path="res://assets/models/person/person_0.png" id="2_fljwo"]
 [ext_resource type="Texture2D" uid="uid://76rqjm4o3uvt" path="res://assets/models/person/person_1.png" id="3_fgkvf"]
 [ext_resource type="Script" path="res://scripts/camera_spring_arm.gd" id="4_dlekd"]
-[ext_resource type="Script" path="res://scenes/camera_follow.gd" id="5_svuaj"]
+[ext_resource type="Script" path="res://scripts/camera_follow.gd" id="5_npag8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2lrn"]
 resource_name = "material_0"
@@ -845,6 +845,7 @@ radius = 0.3
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "anim")]
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_wfmrk")
 camera = NodePath("SpringArmPivot/Camera3D")
 anim = NodePath("Person/AnimationPlayer")
@@ -1011,10 +1012,31 @@ spring_length = 2.0
 [node name="SpringPosition" type="Node3D" parent="SpringArmPivot/SpringArm3D"]
 
 [node name="Camera3D" type="Camera3D" parent="SpringArmPivot" node_paths=PackedStringArray("spring_arm")]
-script = ExtResource("5_svuaj")
+script = ExtResource("5_npag8")
 spring_arm = NodePath("../SpringArm3D/SpringPosition")
-lerp_power = 5.0
 
-[node name="Label" type="Label" parent="."]
+[node name="InteractUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="InteractiveLabel" type="Label" parent="InteractUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.482639
+anchor_top = 0.850309
+anchor_right = 0.517361
+anchor_bottom = 0.885802
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="InteractUI"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
