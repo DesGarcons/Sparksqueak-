@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ca4hh4w22sb5m"
-path="res://.godot/imported/platform.gltf-038075354735d9a54d5318a83a902663.scn"
+uid="uid://dpln4glqqvoy7"
+path="res://.godot/imported/corner_platform.gltf-0fa9bb7ea1c9161dfbe6624518a12ee7.scn"
 
 [deps]
 
-source_file="res://assets/models/platform_wires/new/platform.gltf"
-dest_files=["res://.godot/imported/platform.gltf-038075354735d9a54d5318a83a902663.scn"]
+source_file="res://assets/models/platforms/corner platform/corner_platform.gltf"
+dest_files=["res://.godot/imported/corner_platform.gltf-0fa9bb7ea1c9161dfbe6624518a12ee7.scn"]
 
 [params]
 

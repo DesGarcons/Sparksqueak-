@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://byr7laox7fjn8"
-path="res://.godot/imported/person.gltf-b1335c4b807e9af9aba4848bd6f2efeb.scn"
+uid="uid://dolyrcfg3dst8"
+path="res://.godot/imported/model.gltf-6e7d6f32300b216f983825846e959051.scn"
 
 [deps]
 
-source_file="res://assets/models/person/person.gltf"
-dest_files=["res://.godot/imported/person.gltf-b1335c4b807e9af9aba4848bd6f2efeb.scn"]
+source_file="res://assets/models/floor tile/model.gltf"
+dest_files=["res://.godot/imported/model.gltf-6e7d6f32300b216f983825846e959051.scn"]
 
 [params]
 

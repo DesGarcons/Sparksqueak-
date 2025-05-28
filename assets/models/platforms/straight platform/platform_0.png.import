@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://onv33rudvjl7"
-path.s3tc="res://.godot/imported/platform_0.png-e33187434b83d86b0833337492ab24eb.s3tc.ctex"
+uid="uid://57fmxbbd1iay"
+path.s3tc="res://.godot/imported/platform_0.png-cba9d0eb0f9a4e3350cfc86aace92445.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/platform_wires/platform_0.png"
-dest_files=["res://.godot/imported/platform_0.png-e33187434b83d86b0833337492ab24eb.s3tc.ctex"]
+source_file="res://assets/models/platforms/straight platform/platform_0.png"
+dest_files=["res://.godot/imported/platform_0.png-cba9d0eb0f9a4e3350cfc86aace92445.s3tc.ctex"]
 
 [params]
 

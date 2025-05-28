@@ -8,7 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var use_ui := false
 
 @export var camera: Camera3D
-@export var anim: AnimationPlayer
+@export var animation_player: AnimationPlayer
 
 func _ready():
 	G.set_player(self)
@@ -62,10 +62,17 @@ func _physics_process(delta):
 	move_and_slide()
 
 func animation_player_play(direction: Vector3):
-	# $Label.text = str(anim.speed_scale)
 	if direction.length() > 0.1:
-		anim.speed_scale = 0.7
-		anim.play("walk")
+		animation_player.speed_scale = 0.7
+		animation_player.play("walk")
 	else:
-		anim.speed_scale = 1.0
-		anim.play("idle")
+		animation_player.speed_scale = 1.0
+		animation_player.play("idle")
+
+func play_animation(name_animation: String):
+	if animation_player.is_playing():
+		animation_player.stop()
+	
+	animation_player.speed_scale = 1.5
+	animation_player.play(name_animation)
+

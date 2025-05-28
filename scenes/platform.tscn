@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cwemjer2ol1m3"]
 
 [ext_resource type="Script" path="res://scripts/platform_wires.gd" id="1_eij5n"]
-[ext_resource type="PackedScene" uid="uid://ca4hh4w22sb5m" path="res://assets/models/platform_wires/new/platform.gltf" id="2_tfuya"]
+[ext_resource type="PackedScene" uid="uid://ca4hh4w22sb5m" path="res://assets/models/platforms/straight platform/platform.gltf" id="2_tfuya"]
 [ext_resource type="Script" path="res://scripts/wire_collision.gd" id="3_8cgtm"]
 [ext_resource type="Script" path="res://scripts/block_wires_interact_ui.gd" id="3_wjti1"]
 
@@ -42,9 +42,6 @@ script = ExtResource("1_eij5n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform/Node/platform/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_caibh")
 
-[node name="wires" parent="platform/Node" index="1"]
-script = ExtResource("3_8cgtm")
-
 [node name="StaticBody3D" type="StaticBody3D" parent="platform/Node/wires/wire" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform/Node/wires/wire/StaticBody3D"]
@@ -56,6 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 [node name="Area3D" type="Area3D" parent="platform/Node/wires/wire/Left"]
 collision_layer = 4
 collision_mask = 12
+script = ExtResource("3_8cgtm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform/Node/wires/wire/Left/Area3D"]
 shape = SubResource("SphereShape3D_1kvle")
@@ -66,6 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.00126)
 [node name="Area3D" type="Area3D" parent="platform/Node/wires/wire/Right"]
 collision_layer = 4
 collision_mask = 12
+script = ExtResource("3_8cgtm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform/Node/wires/wire/Right/Area3D"]
 shape = SubResource("SphereShape3D_1kvle")
@@ -81,6 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 [node name="Area3D" type="Area3D" parent="platform/Node/wires/wire2/Left"]
 collision_layer = 4
 collision_mask = 12
+script = ExtResource("3_8cgtm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform/Node/wires/wire2/Left/Area3D"]
 shape = SubResource("SphereShape3D_1kvle")
@@ -91,6 +91,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.00126)
 [node name="Area3D" type="Area3D" parent="platform/Node/wires/wire2/Right"]
 collision_layer = 4
 collision_mask = 12
+script = ExtResource("3_8cgtm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform/Node/wires/wire2/Right/Area3D"]
 shape = SubResource("SphereShape3D_1kvle")
@@ -106,6 +107,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 [node name="Area3D" type="Area3D" parent="platform/Node/wires/wire3/Left"]
 collision_layer = 4
 collision_mask = 12
+script = ExtResource("3_8cgtm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform/Node/wires/wire3/Left/Area3D"]
 shape = SubResource("SphereShape3D_1kvle")
@@ -116,6 +118,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.00126)
 [node name="Area3D" type="Area3D" parent="platform/Node/wires/wire3/Right"]
 collision_layer = 4
 collision_mask = 12
+script = ExtResource("3_8cgtm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform/Node/wires/wire3/Right/Area3D"]
 shape = SubResource("SphereShape3D_1kvle")
@@ -131,6 +134,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 [node name="Area3D" type="Area3D" parent="platform/Node/wires/wire4/Left"]
 collision_layer = 4
 collision_mask = 12
+script = ExtResource("3_8cgtm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform/Node/wires/wire4/Left/Area3D"]
 shape = SubResource("SphereShape3D_1kvle")
@@ -141,6 +145,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.00126)
 [node name="Area3D" type="Area3D" parent="platform/Node/wires/wire4/Right"]
 collision_layer = 4
 collision_mask = 12
+script = ExtResource("3_8cgtm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform/Node/wires/wire4/Right/Area3D"]
 shape = SubResource("SphereShape3D_1kvle")
@@ -213,14 +218,6 @@ visible = false
 mesh = SubResource("BoxMesh_lgyfe")
 surface_material_override/0 = SubResource("StandardMaterial3D_068i1")
 
-[connection signal="area_entered" from="platform/Node/wires/wire/Left/Area3D" to="platform/Node/wires" method="_on_area_3d_area_entered"]
-[connection signal="area_entered" from="platform/Node/wires/wire/Right/Area3D" to="platform/Node/wires" method="_on_area_3d_area_entered"]
-[connection signal="area_entered" from="platform/Node/wires/wire2/Left/Area3D" to="platform/Node/wires" method="_on_area_3d_area_entered"]
-[connection signal="area_entered" from="platform/Node/wires/wire2/Right/Area3D" to="platform/Node/wires" method="_on_area_3d_area_entered"]
-[connection signal="area_entered" from="platform/Node/wires/wire3/Left/Area3D" to="platform/Node/wires" method="_on_area_3d_area_entered"]
-[connection signal="area_entered" from="platform/Node/wires/wire3/Right/Area3D" to="platform/Node/wires" method="_on_area_3d_area_entered"]
-[connection signal="area_entered" from="platform/Node/wires/wire4/Left/Area3D" to="platform/Node/wires" method="_on_area_3d_area_entered"]
-[connection signal="area_entered" from="platform/Node/wires/wire4/Right/Area3D" to="platform/Node/wires" method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 

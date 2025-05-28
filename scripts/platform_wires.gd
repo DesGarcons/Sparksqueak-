@@ -43,6 +43,7 @@ func _process(delta):
 
 	
 	if player_in_range and Input.is_action_just_pressed("Interact"):
+		G.player.play_animation("Interact")
 		interact_ui.set_wires(wires_on_object)
 		interact_ui.toggle_ui()
 
@@ -115,29 +116,3 @@ func swap_meshes(a: MeshInstance3D, b: MeshInstance3D):
 
 	a.global_transform = transform_b
 	b.global_transform = transform_a
-
-
-
-	# wires_on_object.clear()
-	
-	# var child_nodes = get_child(0).get_child(0).get_child(1).get_children()
-	
-	# var used_wires: Array
-
-	# if array_wires.is_empty():
-	# 		var shuffled = textures.duplicate()
-	# 		shuffled.shuffle()
-	# 		used_wires = shuffled.slice(0, WIRE_COUNT)
-	# else:
-	# 	used_wires = array_wires
-
-	# for idx in range(WIRE_COUNT):
-	# 	var mesh = child_nodes[idx]
-	# 	if mesh is MeshInstance3D:
-	# 		var path_texture = used_wires[idx]
-	# 		var loaded_material = ResourceLoader.load(path_texture)
-	# 		if loaded_material and mesh.mesh.get_surface_count() > 0:
-	# 			var material_instance = loaded_material.duplicate()
-	# 			material_instance.set_meta("name", path_texture.split("/wire/")[1].split(".")[0])
-	# 			mesh.set_surface_override_material(0, material_instance)
-	# 			wires_on_object.append(path_texture)

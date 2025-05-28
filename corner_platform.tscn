@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d10odyhxtqf6h"]
+
+[ext_resource type="PackedScene" uid="uid://dpln4glqqvoy7" path="res://assets/models/platforms/corner platform/corner_platform.gltf" id="1_1bu6u"]
+
+[node name="blockbench_export" instance=ExtResource("1_1bu6u")]
